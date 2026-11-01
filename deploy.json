@@ -1,0 +1,10 @@
+{
+  "commands": [
+    "set -e",
+    "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 069916201151.dkr.ecr.ap-south-1.amazonaws.com",
+    "docker pull 069916201151.dkr.ecr.ap-south-1.amazonaws.com/jenkins-proj:latest",
+    "docker rm -f hello-web || true",
+    "docker run -d --name hello-web --restart unless-stopped -p 80:80 069916201151.dkr.ecr.ap-south-1.amazonaws.com/jenkins-proj:latest",
+    "docker ps --filter name=hello-web"
+  ]
+}
