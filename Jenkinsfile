@@ -21,8 +21,8 @@ pipeline {
   agent any
   environment {
     REGION   = 'ap-south-1'
-    ACCOUNT  = '123456789012'
-    REPO     = 'hello-jenkins'
+    ACCOUNT  = '069916201151'
+    REPO     = 'jenkins-proj'
     INSTANCE = 'none'
     REGISTRY = "${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com"
     IMG      = "${REPO}:${BUILD_NUMBER}"
